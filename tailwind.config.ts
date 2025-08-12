@@ -67,8 +67,9 @@ export default {
 				}
 			},
 			fontFamily: {
-				cairo: ['Cairo', 'IBM Plex Arabic', 'sans-serif'],
+				cairo: ['Cairo', 'sans-serif'],
 				inter: ['Inter', 'sans-serif'],
+				'ibm-arabic': ['IBM Plex Arabic', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -77,11 +78,13 @@ export default {
 			},
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-hero': 'var(--gradient-hero)',
 				'gradient-subtle': 'var(--gradient-subtle)',
 			},
 			boxShadow: {
 				'primary': 'var(--shadow-primary)',
+				'secondary': 'var(--shadow-secondary)',
 				'card': 'var(--shadow-card)',
 				'elegant': 'var(--shadow-elegant)',
 			},

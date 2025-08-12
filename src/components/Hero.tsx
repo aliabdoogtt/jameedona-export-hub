@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { FontAwesomeIcon } from './FontAwesome';
-import factoryHero from '@/assets/factory-hero.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero = () => {
+  const { t, isRTL } = useLanguage();
   const trustBadges = [
     { name: 'Halal', icon: 'award' },
     { name: 'ISO 22000', icon: 'award' },
@@ -17,7 +18,7 @@ const Hero = () => {
       {/* Background Image with Overlay */}
       <div 
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${factoryHero})` }}
+        style={{ backgroundImage: `url(/lovable-uploads/1b1ebf6c-3799-4245-9aca-27e0e3bbff61.png)` }}
       >
         <div className="absolute inset-0 hero-overlay"></div>
       </div>
@@ -27,7 +28,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center text-white">
           
           {/* Trust Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8 animate-fade-up">
+          <div className={`flex flex-wrap justify-center gap-4 mb-8 animate-fade-up ${isRTL ? 'flex-row-reverse' : ''}`}>
             {trustBadges.map((badge, index) => (
               <div 
                 key={badge.name}
@@ -41,44 +42,38 @@ const Hero = () => {
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 font-cairo animate-fade-up">
-            جميدونا
-            <span className="block text-3xl md:text-4xl font-inter mt-2">
-              JAMEEDONA
-            </span>
+          <h1 className={`text-5xl md:text-7xl font-bold mb-6 animate-fade-up ${isRTL ? 'font-cairo' : 'font-inter'}`}>
+            {t('hero.title')}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl mb-4 animate-fade-up font-cairo leading-relaxed">
-            منتج الجميد الأردني الأصيل من مصنع الفرسان الرباعية
-          </p>
-          <p className="text-lg md:text-xl mb-8 animate-fade-up font-inter">
-            Authentic Jordanian Jameed from Al-Fursan Al-Ruba'iya Factory
+          <p className={`text-xl md:text-2xl mb-4 animate-fade-up leading-relaxed ${isRTL ? 'font-cairo' : 'font-inter'}`}>
+            {t('hero.subtitle')}
           </p>
 
           {/* Support Text */}
-          <p className="text-lg mb-12 max-w-3xl mx-auto animate-fade-up font-cairo leading-relaxed">
-            نقدم أجود أنواع الجميد المصنوع من اللبن الطازج بأعلى معايير الجودة والسلامة الغذائية للأسواق العالمية
+          <p className={`text-lg mb-12 max-w-3xl mx-auto animate-fade-up leading-relaxed ${isRTL ? 'font-cairo' : 'font-inter'}`}>
+            {t('hero.description')}
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up">
+          <div className={`flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
             <Button size="lg" className="btn-gradient text-lg px-8 py-4 min-w-[200px]">
-              <FontAwesomeIcon icon="paper-plane" className="ml-2" />
-              اطلب عرض أسعار
+              <FontAwesomeIcon icon="paper-plane" className={isRTL ? 'ml-2' : 'mr-2'} />
+              {t('hero.requestQuote')}
             </Button>
             <Button 
               size="lg" 
               variant="outline" 
               className="text-lg px-8 py-4 min-w-[200px] bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 hover:text-white"
             >
-              <FontAwesomeIcon icon="file-arrow-down" className="ml-2" />
-              حمّل المواصفات الفنية
+              <FontAwesomeIcon icon="file-arrow-down" className={isRTL ? 'ml-2' : 'mr-2'} />
+              {t('hero.downloadSpecs')}
             </Button>
           </div>
 
           {/* Quick Contact */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 animate-fade-up">
+          <div className={`flex flex-col sm:flex-row gap-6 justify-center items-center mt-12 animate-fade-up ${isRTL ? 'sm:flex-row-reverse' : ''}`}>
             <a 
               href="tel:+962" 
               className="flex items-center gap-3 text-white/90 hover:text-white transition-colors"

@@ -1,34 +1,29 @@
 import { FontAwesomeIcon } from './FontAwesome';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const WhyUs = () => {
+  const { t, isRTL } = useLanguage();
+  
   const features = [
     {
       icon: 'industry',
-      titleAr: 'خبرة تصنيع',
-      titleEn: 'Manufacturing Expertise',
-      descriptionAr: 'أكثر من 20 عاماً من الخبرة في تصنيع منتجات الألبان والجميد',
-      descriptionEn: '20+ years of experience in dairy and jameed manufacturing',
+      titleKey: 'whyus.manufacturing',
+      descKey: 'whyus.manufacturingDesc',
     },
     {
       icon: 'award',
-      titleAr: 'جودة وشهادات',
-      titleEn: 'Quality & Certifications',
-      descriptionAr: 'شهادات الجودة العالمية ISO 22000, HACCP, Halal, FDA',
-      descriptionEn: 'International quality certifications: ISO 22000, HACCP, Halal, FDA',
+      titleKey: 'whyus.quality',
+      descKey: 'whyus.qualityDesc',
     },
     {
       icon: 'boxes-stacked',
-      titleAr: 'مرونة تعبئة',
-      titleEn: 'Flexible Packaging',
-      descriptionAr: 'أحجام متنوعة وحلول تعبئة مخصصة حسب احتياجات السوق',
-      descriptionEn: 'Various sizes and customized packaging solutions for market needs',
+      titleKey: 'whyus.packaging',
+      descKey: 'whyus.packagingDesc',
     },
     {
       icon: 'truck-fast',
-      titleAr: 'دعم التصدير',
-      titleEn: 'Export Support',
-      descriptionAr: 'فريق متخصص في التصدير وخدمة العملاء على مدار الساعة',
-      descriptionEn: 'Specialized export team and 24/7 customer service',
+      titleKey: 'whyus.export',
+      descKey: 'whyus.exportDesc',
     },
   ];
 
@@ -36,12 +31,9 @@ const WhyUs = () => {
     <section className="py-20 section-accent">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-text-dark font-cairo">
-            لماذا نحن؟
+          <h2 className={`text-4xl md:text-5xl font-bold mb-4 text-text-dark ${isRTL ? 'font-cairo' : 'font-inter'}`}>
+            {t('whyus.title')}
           </h2>
-          <p className="text-xl text-muted-foreground font-inter">
-            Why Choose JAMEEDONA?
-          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -58,18 +50,12 @@ const WhyUs = () => {
                 />
               </div>
               
-              <h3 className="text-xl font-bold mb-3 text-text-dark font-cairo">
-                {feature.titleAr}
+              <h3 className={`text-xl font-bold mb-3 text-text-dark ${isRTL ? 'font-cairo' : 'font-inter'}`}>
+                {t(feature.titleKey)}
               </h3>
-              <h4 className="text-lg font-semibold mb-4 text-primary font-inter">
-                {feature.titleEn}
-              </h4>
               
-              <p className="text-muted-foreground leading-relaxed font-cairo mb-3">
-                {feature.descriptionAr}
-              </p>
-              <p className="text-sm text-muted-foreground font-inter">
-                {feature.descriptionEn}
+              <p className={`text-muted-foreground leading-relaxed ${isRTL ? 'font-cairo' : 'font-inter'}`}>
+                {t(feature.descKey)}
               </p>
             </div>
           ))}
