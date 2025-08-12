@@ -2,41 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+/* Definition of the JAMEEDONA design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
+    /* JAMEEDONA Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-
+    --foreground: 211 72% 15%;
+    
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-
+    --card-foreground: 211 72% 15%;
+    
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-
+    --popover-foreground: 211 72% 15%;
+    
+    /* Primary Brand Blue #005AA7 */
+    --primary: 210 100% 33%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 100% 28%;
+    --primary-light: 210 100% 40%;
+    
+    /* Secondary Gray #9B9B9A */
+    --secondary: 60 1% 61%;
+    --secondary-foreground: 211 72% 15%;
+    
+    /* Text/Dark #0B2239 */
+    --text-dark: 211 72% 15%;
+    
+    /* Accent Background #F2F6FB */
+    --accent: 211 53% 97%;
+    --accent-foreground: 211 72% 15%;
+    
+    --muted: 211 53% 97%;
+    --muted-foreground: 60 1% 61%;
+    
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
-    --radius: 0.5rem;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 211 30% 85%;
+    --input: 211 30% 85%;
+    --ring: 210 100% 33%;
+    
+    --radius: 1rem;
+    
+    /* JAMEEDONA Brand Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 33%), hsl(210 100% 40%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 33% / 0.9), hsl(210 100% 40% / 0.7));
+    --gradient-subtle: linear-gradient(180deg, hsl(211 53% 97%), hsl(0 0% 100%));
+    
+    /* JAMEEDONA Shadows */
+    --shadow-primary: 0 10px 30px -5px hsl(210 100% 33% / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(211 72% 15% / 0.1);
+    --shadow-elegant: 0 8px 25px -8px hsl(210 100% 33% / 0.15);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +79,44 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 211 72% 5%;
+    --foreground: 0 0% 98%;
+    
+    --card: 211 72% 8%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 211 72% 8%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 210 100% 45%;
+    
+    --secondary: 211 20% 25%;
+    --secondary-foreground: 0 0% 90%;
+    
+    --text-dark: 0 0% 98%;
+    
+    --accent: 211 25% 15%;
+    --accent-foreground: 0 0% 90%;
+    
+    --muted: 211 25% 15%;
+    --muted-foreground: 60 1% 70%;
+    
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 211 25% 20%;
+    --input: 211 25% 20%;
+    --ring: 210 100% 50%;
+    
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 50%), hsl(210 100% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 20% / 0.9), hsl(210 100% 30% / 0.7));
+    --gradient-subtle: linear-gradient(180deg, hsl(211 25% 15%), hsl(211 72% 8%));
+    
+    --shadow-primary: 0 10px 30px -5px hsl(210 100% 50% / 0.3);
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.3);
   }
 }
 
@@ -100,6 +126,93 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+  }
+  
+  /* JAMEEDONA Brand Typography */
+  .font-cairo {
+    font-family: 'Cairo', 'IBM Plex Arabic', sans-serif;
+  }
+  
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* JAMEEDONA Brand Components */
+  .hero-text {
+    @apply bg-gradient-to-r from-primary to-primary-light bg-clip-text text-transparent;
+  }
+  
+  .card-elegant {
+    @apply bg-card rounded-2xl shadow-[var(--shadow-card)] border border-border/50;
+  }
+  
+  .btn-gradient {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground shadow-[var(--shadow-primary)] hover:scale-105 transition-all duration-300;
+  }
+  
+  .section-accent {
+    background: var(--gradient-subtle);
+  }
+  
+  /* Font Awesome Icon Colors */
+  .fa-primary {
+    color: hsl(var(--primary));
+  }
+  
+  .fa-secondary {
+    color: hsl(var(--secondary));
+  }
+  
+  .fa-accent {
+    color: hsl(var(--text-dark));
+  }
+}
+
+@layer components {
+  /* JAMEEDONA Hero Overlay */
+  .hero-overlay {
+    background: var(--gradient-hero);
+  }
+  
+  /* JAMEEDONA Animations */
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+  
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
